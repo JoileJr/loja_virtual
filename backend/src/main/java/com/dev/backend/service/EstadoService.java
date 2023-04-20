@@ -11,6 +11,7 @@ import com.dev.backend.repository.EstadoRepository;
 
 @Service
 public class EstadoService {
+    
     @Autowired
     private EstadoRepository estadoRepository;
 
