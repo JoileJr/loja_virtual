@@ -42,6 +42,5 @@ public class PermissaoController {
     public ResponseEntity<Void> excluir(@PathVariable("id") Long id){
         permissaoService.excluir(id);
         return ResponseEntity.ok().build();
-    }
-    
+    }    
 }

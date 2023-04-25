@@ -13,34 +13,35 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dev.backend.entity.PermissaoPessoa;
-import com.dev.backend.service.PermissaoPessoaService;
+import com.dev.backend.entity.ProdutoImagens;
+import com.dev.backend.service.ProdutoImagensService;
 
 @RestController
-@RequestMapping("/api/permissaoPessoa")
-public class PermissaoPessoaController {
+@RequestMapping("/api/produtoImagem")
+public class ProdutoImagensController {
 
     @Autowired
-    private PermissaoPessoaService permissaoPessoaService;
+    private ProdutoImagensService produtoImagemService;
 
     @GetMapping("/")
-    public List<PermissaoPessoa> buscarTodos(){
-       return permissaoPessoaService.buscarTodos();
+    public List<ProdutoImagens> buscarTodos(){
+       return produtoImagemService.buscarTodos();
     }
 
     @PostMapping("/")
-    public PermissaoPessoa inserir(@RequestBody PermissaoPessoa permissaoPessoa){
-        return permissaoPessoaService.inserir(permissaoPessoa);
+    public ProdutoImagens inserir(@RequestBody ProdutoImagens produtoImagens){
+        return produtoImagemService.inserir(produtoImagens);
     }
 
     @PutMapping("/")
-    public PermissaoPessoa alterar(@RequestBody PermissaoPessoa permissaoPessoa){
-        return permissaoPessoaService.alterar(permissaoPessoa);
+    public ProdutoImagens alterar(@RequestBody ProdutoImagens produtoImagens){
+        return produtoImagemService.alterar(produtoImagens);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> excluir(@PathVariable("id") Long id){
-        permissaoPessoaService.excluir(id);
+        produtoImagemService.excluir(id);
         return ResponseEntity.ok().build();
     }
+    
 }

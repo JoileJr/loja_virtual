@@ -43,5 +43,4 @@ public class ProdutoController {
         produtoService.excluir(id);
         return ResponseEntity.ok().build();
     }
-    
 }
