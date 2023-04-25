@@ -11,6 +11,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.persistence.Transient;
 import lombok.Data;
 
 @Entity
@@ -25,12 +26,16 @@ public class ProdutoImagens {
     private String nome;
 
     @ManyToOne
-    @JoinColumn(name = "idProduto")
+    @JoinColumn(name="idProduto")
     private Produto produto;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataCriacao;
-    
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataAtualizacao;
+    
+    @Transient
+    private byte[] arquivo;
+    
 }
