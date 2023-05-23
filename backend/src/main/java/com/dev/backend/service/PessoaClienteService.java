@@ -31,7 +31,7 @@ public class PessoaClienteService {
         //emailService.enviarEmailTexto(pessoaNovo.getEmail(), "cadastro na loja tabajara", "o registro foi realizado com sucesso");
         Map<String, Object> propMap = new HashMap<>();
         propMap.put("nome", pessoaNovo.getNome());
-        propMap.put("mensagem", propMap);
+        propMap.put("mensagem", "teste");
         emailService.enviarEmailTemplate(pessoaNovo.getEmail(), "Cadastro na loja tabajara", propMap);
         return pessoaNovo;
     }

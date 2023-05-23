@@ -16,7 +16,7 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "cidade")
+@Table(name = "tb_cidade")
 public class Cidade {
     
     @Id

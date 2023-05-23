@@ -13,7 +13,7 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "marca")
+@Table(name = "tb_marca")
 public class Marca {
     
     @Id
