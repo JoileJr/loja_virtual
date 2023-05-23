@@ -13,7 +13,7 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "categoria")
+@Table(name = "tb_categoria")
 public class Categoria {
 
     @Id

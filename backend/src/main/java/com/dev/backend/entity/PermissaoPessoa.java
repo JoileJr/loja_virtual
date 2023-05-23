@@ -16,7 +16,7 @@ import jakarta.persistence.TemporalType;
 import lombok.Data;
 
 @Entity
-@Table(name = "permissao_pessoa")
+@Table(name = "tb_permissao_pessoa")
 @Data
 public class PermissaoPessoa implements GrantedAuthority{
     @Id
