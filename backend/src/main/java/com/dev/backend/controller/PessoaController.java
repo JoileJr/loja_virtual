@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.dev.backend.entity.Pessoa;
 import com.dev.backend.service.PessoaService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/pessoa")
 public class PessoaController {
@@ -29,12 +31,12 @@ public class PessoaController {
     }
 
     @PostMapping("/")
-    public Pessoa inserir(@RequestBody Pessoa pessoa){
+    public Pessoa inserir(@Valid @RequestBody Pessoa pessoa){
         return pessoaService.inserir(pessoa);
     }
 
     @PutMapping("/")
-    public Pessoa alterar(@RequestBody Pessoa pessoa){
+    public Pessoa alterar(@Valid @RequestBody Pessoa pessoa){
         return pessoaService.alterar(pessoa);
     }
 

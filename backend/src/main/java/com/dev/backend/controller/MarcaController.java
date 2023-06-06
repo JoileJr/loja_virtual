@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.dev.backend.entity.Marca;
 import com.dev.backend.service.MarcaService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/marca")
 public class MarcaController {
@@ -29,12 +31,12 @@ public class MarcaController {
     }
 
     @PostMapping("/")
-    public Marca inserir(@RequestBody Marca marca){
+    public Marca inserir(@Valid @RequestBody Marca marca){
         return marcaService.inserir(marca);
     }
 
     @PutMapping("/")
-    public Marca alterar(@RequestBody Marca marca){
+    public Marca alterar(@Valid @RequestBody Marca marca){
         return marcaService.alterar(marca);
     }
 

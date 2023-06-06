@@ -21,6 +21,8 @@ import com.dev.backend.entity.Estado;
 import com.dev.backend.service.EstadoService;
 import com.opencsv.exceptions.CsvException;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/estado")
 public class EstadoController {
@@ -34,7 +36,7 @@ public class EstadoController {
     }
 
     @PostMapping("/processar")
-    public ResponseEntity<String> processarCSV(@RequestParam("file") MultipartFile file) {
+    public ResponseEntity<String> processarCSV(@Valid @RequestParam("file") MultipartFile file) {
         try {
             estadoService.lerCSV(file);
             return ResponseEntity.ok("Arquivo CSV processado com sucesso");
@@ -45,12 +47,12 @@ public class EstadoController {
     }
 
     @PostMapping("/")
-    public Estado inserir(@RequestBody Estado estado){
+    public Estado inserir(@Valid @RequestBody Estado estado){
         return estadoService.inserir(estado);
     }
 
     @PutMapping("/")
-    public Estado alterar(@RequestBody Estado estado){
+    public Estado alterar(@Valid @RequestBody Estado estado){
         return estadoService.alterar(estado);
     }
 

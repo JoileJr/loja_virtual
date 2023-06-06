@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.dev.backend.entity.Produto;
 import com.dev.backend.service.ProdutoService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/produto")
 public class ProdutoController {
@@ -29,12 +31,12 @@ public class ProdutoController {
     }
 
     @PostMapping("/")
-    public Produto inserir(@RequestBody Produto produto){
+    public Produto inserir(@Valid @RequestBody Produto produto){
         return produtoService.inserir(produto);
     }
 
     @PutMapping("/")
-    public Produto alterar(@RequestBody Produto produto){
+    public Produto alterar(@Valid @RequestBody Produto produto){
         return produtoService.alterar(produto);
     }
 

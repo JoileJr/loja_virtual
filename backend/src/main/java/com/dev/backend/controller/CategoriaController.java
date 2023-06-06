@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.dev.backend.entity.Categoria;
 import com.dev.backend.service.CategoriaService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/categoria")
 public class CategoriaController {
@@ -29,12 +31,12 @@ public class CategoriaController {
     }
 
     @PostMapping("/")
-    public Categoria inserir(@RequestBody Categoria categoria){
+    public Categoria inserir(@Valid @RequestBody Categoria categoria){
         return categoriaService.inserir(categoria);
     }
 
     @PutMapping("/")
-    public Categoria alterar(@RequestBody Categoria categoria){
+    public Categoria alterar(@Valid @RequestBody Categoria categoria){
         return categoriaService.alterar(categoria);
     }
 

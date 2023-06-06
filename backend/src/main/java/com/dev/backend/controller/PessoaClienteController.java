@@ -10,6 +10,8 @@ import com.dev.backend.dto.PessoaClienteRequestDTO;
 import com.dev.backend.entity.Pessoa;
 import com.dev.backend.service.PessoaClienteService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/cliente")
 public class PessoaClienteController{
@@ -18,7 +20,7 @@ public class PessoaClienteController{
     private PessoaClienteService pessoaClienteService;
 
     @PostMapping("/")
-    public Pessoa inserir(@RequestBody PessoaClienteRequestDTO pessoaClienteRequestDTO){
+    public Pessoa inserir(@Valid @RequestBody PessoaClienteRequestDTO pessoaClienteRequestDTO){
         return pessoaClienteService.registrar(pessoaClienteRequestDTO);
     }
    
